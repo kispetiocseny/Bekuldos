@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="telekocsi.css">
+</head>
+<body>
+<div class="tartalom">
+    <h1>Telekocsi!</h1>
+    <div class="menu">
+        <ul><li><a href="telekocsi.html">Bemutatkozás</a></li> <li>Sofőrőknek</li> <li>Utasoknak Bejelentkezés</li> <li>Regisztráció</li></ul>
+        <h2>Regisztráció</h2>
+        <form>
+            <label for="nev">Név:</label>
+            <input type="text" id="nev" name="nev" ><br>
+            <label for="email">E-mail cím:</label>
+            <input type="email" id="email" name="email" ><br>
+            <label for="jelszo">Jelszó</label>
+            <input type="password" id="jelszo" value="" ><br>
+            <label for="jelszoismet">Jelszó ismét</label>
+            <input type="password" id="jelszoIsmet" value=""><br>
+           <button id="mentes">Mentés</button>
+          </form> 
+
+          <script>
+            mentes.addEventListener("click", jelszoEllenorzo);
+
+            function jelszoEllenorzo(){
+                azonos=false;
+                let jelszo=document.getElementById("jelszo").value
+                let jelszoIsmet=document.getElementById("jelszoIsmet").value
+                    if(jelszo.length>=5){
+                if(jelszo==jelszoIsmet){
+                    azonos=true;
+                }
+                else{
+                    alert("A két jelszó nem egyezik")
+                }
+            }
+                else{
+                    alert("Nem megfelelő jelszó hosszúság")
+                }
+                return azonos;
+                }
+
+          </script>
+    </div>
+</div>
+</body>
+</html>
